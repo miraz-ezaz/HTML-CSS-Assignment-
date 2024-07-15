@@ -2,6 +2,8 @@ let checkinDate = null;
 let checkoutDate = null;
 let extraDate = null;
 let isHiddenBar = false;
+const photos = ["img1.jpg", "img2.jpg", "img3.jpg"];
+let currentIndex = 0;
 
 function showHiddenSearchBar(){
     isHiddenBar = true;
@@ -229,6 +231,12 @@ function closeModal() {
     document.getElementById('modal').style.display = 'none';
 }
 
+document.addEventListener('DOMContentLoaded', () => {
+    let currentIndex = 0;
+    loadButtonState('saved');
+    updateGallery();
+});
+
 function saveItem() {
 
     btnState = localStorage.getItem('saved');
@@ -255,8 +263,7 @@ function loadButtonState(status) {
     }
 }
 
-const photos = ["img1.jpg", "img2.jpg", "img3.jpg"];
-let currentIndex = 0;
+
 
 
 
@@ -286,7 +293,3 @@ function openGallery() {
 }
 
 
-document.addEventListener('DOMContentLoaded', () => {
-    loadButtonState('saved');
-    updateGallery();
-});
