@@ -1,0 +1,313 @@
+
+#hiddenSearchbar
+{
+    display: none;
+}
+.search-bar1 {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* More visible shadow */
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    /* For positioning the popup */
+}
+
+.search-bar1>div {
+    padding: 15px 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.search-bar1>div:last-child {
+    border-right: none;
+}
+
+.search-bar1>div:hover {
+    background-color: #c2c2c2;
+}
+
+.search-bar1>div label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.search-bar1>div input {
+    border: none;
+    outline: none;
+    font-size: 14px;
+    color: #777;
+    pointer-events: none;
+    background-color: transparent;
+}
+
+.search-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 56, 92);
+    color: white;
+    font-weight: bold;
+    border: none;
+    padding: 0 20px;
+    height: 40px;
+    /* Fixed height */
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #640e2b;
+}
+
+.search-icon {
+    margin-right: 10px;
+}
+
+.selected {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    /* More visible shadow */
+    border-radius: 30px;
+    background-color: #fff;
+}
+
+.popup {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 280px;
+    /* Fixed width */
+}
+
+.popup h2 {
+    margin-top: 0;
+    font-size: 18px;
+    /* Smaller font size */
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* 3 columns */
+    grid-template-rows: repeat(2, 1fr);
+    /* 2 rows */
+    gap: 10px;
+    /* Smaller gap */
+    margin-top: 10px;
+    /* Smaller margin */
+}
+
+.grid-item {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px);
+}
+
+.grid-item img {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.grid-item p {
+    margin: 10px 0 0;
+    font-weight: bold;
+    font-size: 14px;
+    /* Smaller font size */
+}
+
+.calendar-container1 {
+    display: none;
+    position: absolute;
+    width: 500px;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    z-index: 1;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.tab {
+    padding: 10px 20px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.tab.active {
+    background-color: #eee;
+    border-color: #ddd;
+}
+
+.tab-content {
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+.calendars1 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.calendar1 {
+    width: 45%;
+}
+
+.calendar1 h3 {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.days {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.days div {
+    padding: 10px 0;
+}
+
+.days div.empty {
+    color: #ddd;
+}
+
+.days div:not(.empty) {
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.days div:not(.empty):hover {
+    background-color: #eee;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttons button {
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    background-color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.buttons button:hover {
+    background-color: #f0f0f0;
+    border-color: #ccc;
+}
+
+.buttons button.active {
+    background-color: black;
+    color: white;
+    border-color: black;
+}
+
+/* Guest Counter Popup Styles */
+.guest-counter-container {
+    display: none;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    width: 300px;
+}
+
+.guest-counter .item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.guest-counter .item:last-child {
+    border-bottom: none;
+}
+
+.label-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Align items to the start */
+    flex: 1;
+}
+
+.guest-counter label {
+    font-weight: bold;
+}
+
+.guest-counter small {
+    color: #777;
+    margin-top: 5px;
+}
+
+.counter {
+    display: flex;
+    align-items: center;
+}
+
+.counter button {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+}
+
+.counter button:disabled {
+    cursor: not-allowed;
+    color: #ddd;
+}
+
+.counter span {
+    margin: 0 10px;
+    font-size: 16px;
+    width: 20px;
+    text-align: center;
+}
+
+.service-animal {
+    color: #777;
+    text-decoration: underline;
+    cursor: pointer;
+}
