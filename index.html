@@ -6,30 +6,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Comfy New Apt. in Pueblo Libre!</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="photoGallery.css">
+    <link rel="stylesheet" href="searchbar.css">
+    <script type="text/javascript" src="script.js"></script>
 </head>
 
 <body>
-    <div>
+    <div id="headerdiv">
         <header>
             <div class="headerItem">
                 <div class="logo">
                 </div>
 
-                <div class="search-bar">
+                <div class="search-bar" id="mainSearchBar">
                     <span id="buttonSpan">
-                        <button class="searchButtons">
+                        <button class="searchButtons" onclick="showHiddenSearchBar()">
                             <div class="buttonText">
                                 Anywhere
                             </div>
                         </button>
                         <span class="divider"></span>
-                        <button class="searchButtons">
+                        <button class="searchButtons" onclick="showHiddenSearchBar()">
                             <div class="buttonText">
                                 Any week
                     </span>
                     </button>
                     <span class="divider"></span>
-                    <button class="searchButtons">
+                    <button class="searchButtons" onclick="showHiddenSearchBar()">
                         <div class="buttonText">
                             Add guets
                         </div>
@@ -42,6 +45,227 @@
                         </div>
                     </button>
                     </span>
+                </div>
+                <div id="hiddenSearchbar">
+                    <div class="search-bar1">
+                        <div id="where-section" onclick="selectSection('where-section')">
+                            <label for="where">Where</label>
+                            <input type="text" id="where" placeholder="Search destinations">
+                        </div>
+                        <div id="checkin-section" onclick="selectSection('checkin-section')">
+                            <label for="checkin">Check in</label>
+                            <input type="text" id="checkin" placeholder="Add dates">
+                        </div>
+                        <div id="checkout-section" onclick="selectSection('checkout-section')">
+                            <label for="checkout">Check out</label>
+                            <input type="text" id="checkout" placeholder="Add dates">
+                        </div>
+                        <div id="who-section" onclick="selectSection('who-section')">
+                            <label for="who">Who</label>
+                            <input type="text" id="who" placeholder="Add guests">
+                        </div>
+                        <button class="search-button">
+                            <span class="search-icon">🔍</span> Search
+                        </button>
+                    </div>
+                
+                    <div id="region-popup" class="popup">
+                        <h2>Search by region</h2>
+                        <div class="grid">
+                            <div class="grid-item">
+                                <img src="https://via.placeholder.com/100" alt="I'm flexible">
+                                <p>I'm flexible</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="https://via.placeholder.com/100" alt="Southeast Asia">
+                                <p>Southeast Asia</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="https://via.placeholder.com/100" alt="Canada">
+                                <p>Canada</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="https://via.placeholder.com/100" alt="Europe">
+                                <p>Europe</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="https://via.placeholder.com/100" alt="Thailand">
+                                <p>Thailand</p>
+                            </div>
+                            <div class="grid-item">
+                                <img src="https://via.placeholder.com/100" alt="Middle East">
+                                <p>Middle East</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div id="calendar-popup" class="calendar-container1">
+                        <div class="tabs">
+                            <div class="tab active" onclick="switchTab(this, 'calendars')">Dates</div>
+                            <div class="tab" onclick="switchTab(this, 'months')">Months</div>
+                            <div class="tab" onclick="switchTab(this, 'flexible')">Flexible</div>
+                        </div>
+                        <div id="calendars1" class="tab-content active">
+                            <div class="calendars1">
+                                <div class="calendar1">
+                                    <h3>July 2024</h3>
+                                    <div class="days">
+                                        <div>Mon</div>
+                                        <div>Tue</div>
+                                        <div>Wed</div>
+                                        <div>Thu</div>
+                                        <div>Fri</div>
+                                        <div>Sat</div>
+                                        <div>Sun</div>
+                                        <div class="empty">1</div>
+                                        <div class="empty">2</div>
+                                        <div class="empty">3</div>
+                                        <div class="empty">4</div>
+                                        <div class="day" onclick="selectDate('2024-07-01')">1</div>
+                                        <div class="day" onclick="selectDate('2024-07-02')">2</div>
+                                        <div class="day" onclick="selectDate('2024-07-03')">3</div>
+                                        <div class="day" onclick="selectDate('2024-07-04')">4</div>
+                                        <div class="day" onclick="selectDate('2024-07-05')">5</div>
+                                        <div class="day" onclick="selectDate('2024-07-06')">6</div>
+                                        <div class="day" onclick="selectDate('2024-07-07')">7</div>
+                                        <div class="day" onclick="selectDate('2024-07-08')">8</div>
+                                        <div class="day" onclick="selectDate('2024-07-09')">9</div>
+                                        <div class="day" onclick="selectDate('2024-07-10')">10</div>
+                                        <div class="day" onclick="selectDate('2024-07-11')">11</div>
+                                        <div class="day" onclick="selectDate('2024-07-12')">12</div>
+                                        <div class="day" onclick="selectDate('2024-07-13')">13</div>
+                                        <div class="day" onclick="selectDate('2024-07-14')">14</div>
+                                        <div class="day" onclick="selectDate('2024-07-15')">15</div>
+                                        <div class="day" onclick="selectDate('2024-07-16')">16</div>
+                                        <div class="day" onclick="selectDate('2024-07-17')">17</div>
+                                        <div class="day" onclick="selectDate('2024-07-18')">18</div>
+                                        <div class="day" onclick="selectDate('2024-07-19')">19</div>
+                                        <div class="day" onclick="selectDate('2024-07-20')">20</div>
+                                        <div class="day" onclick="selectDate('2024-07-21')">21</div>
+                                        <div class="day" onclick="selectDate('2024-07-22')">22</div>
+                                        <div class="day" onclick="selectDate('2024-07-23')">23</div>
+                                        <div class="day" onclick="selectDate('2024-07-24')">24</div>
+                                        <div class="day" onclick="selectDate('2024-07-25')">25</div>
+                                        <div class="day" onclick="selectDate('2024-07-26')">26</div>
+                                        <div class="day" onclick="selectDate('2024-07-27')">27</div>
+                                        <div class="day" onclick="selectDate('2024-07-28')">28</div>
+                                        <div class="day" onclick="selectDate('2024-07-29')">29</div>
+                                        <div class="day" onclick="selectDate('2024-07-30')">30</div>
+                                        <div class="day" onclick="selectDate('2024-07-31')">31</div>
+                                    </div>
+                                </div>
+                                <div class="calendar1">
+                                    <h3>August 2024</h3>
+                                    <div class="days">
+                                        <div>Mon</div>
+                                        <div>Tue</div>
+                                        <div>Wed</div>
+                                        <div>Thu</div>
+                                        <div>Fri</div>
+                                        <div>Sat</div>
+                                        <div>Sun</div>
+                                        <div class="empty">29</div>
+                                        <div class="empty">30</div>
+                                        <div class="empty">31</div>
+                                        <div class="day" onclick="selectDate('2024-08-01')">1</div>
+                                        <div class="day" onclick="selectDate('2024-08-02')">2</div>
+                                        <div class="day" onclick="selectDate('2024-08-03')">3</div>
+                                        <div class="day" onclick="selectDate('2024-08-04')">4</div>
+                                        <div class="day" onclick="selectDate('2024-08-05')">5</div>
+                                        <div class="day" onclick="selectDate('2024-08-06')">6</div>
+                                        <div class="day" onclick="selectDate('2024-08-07')">7</div>
+                                        <div class="day" onclick="selectDate('2024-08-08')">8</div>
+                                        <div class="day" onclick="selectDate('2024-08-09')">9</div>
+                                        <div class="day" onclick="selectDate('2024-08-10')">10</div>
+                                        <div class="day" onclick="selectDate('2024-08-11')">11</div>
+                                        <div class="day" onclick="selectDate('2024-08-12')">12</div>
+                                        <div class="day" onclick="selectDate('2024-08-13')">13</div>
+                                        <div class="day" onclick="selectDate('2024-08-14')">14</div>
+                                        <div class="day" onclick="selectDate('2024-08-15')">15</div>
+                                        <div class="day" onclick="selectDate('2024-08-16')">16</div>
+                                        <div class="day" onclick="selectDate('2024-08-17')">17</div>
+                                        <div class="day" onclick="selectDate('2024-08-18')">18</div>
+                                        <div class="day" onclick="selectDate('2024-08-19')">19</div>
+                                        <div class="day" onclick="selectDate('2024-08-20')">20</div>
+                                        <div class="day" onclick="selectDate('2024-08-21')">21</div>
+                                        <div class="day" onclick="selectDate('2024-08-22')">22</div>
+                                        <div class="day" onclick="selectDate('2024-08-23')">23</div>
+                                        <div class="day" onclick="selectDate('2024-08-24')">24</div>
+                                        <div class="day" onclick="selectDate('2024-08-25')">25</div>
+                                        <div class="day" onclick="selectDate('2024-08-26')">26</div>
+                                        <div class="day" onclick="selectDate('2024-08-27')">27</div>
+                                        <div class="day" onclick="selectDate('2024-08-28')">28</div>
+                                        <div class="day" onclick="selectDate('2024-08-29')">29</div>
+                                        <div class="day" onclick="selectDate('2024-08-30')">30</div>
+                                        <div class="day" onclick="selectDate('2024-08-31')">31</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="buttons">
+                                <button class="active">Exact dates</button>
+                                <button onclick="addExtraDate('1')">± 1 day</button>
+                                <button onclick="addExtraDate('2')">± 2 days</button>
+                                <button onclick="addExtraDate('3')">± 3 days</button>
+                                <button onclick="addExtraDate('7')">± 7 days</button>
+                                <button onclick="addExtraDate('14')">± 14 days</button>
+                            </div>
+                        </div>
+                        <div id="months" class="tab-content">
+                            <p>Content for Months tab</p>
+                        </div>
+                        <div id="flexible" class="tab-content">
+                            <p>Content for Flexible tab</p>
+                        </div>
+                    </div>
+                
+                    <div id="guest-popup" class="guest-counter-container">
+                        <div class="guest-counter">
+                            <div class="item">
+                                <div class="label-container">
+                                    <label>Adults</label>
+                                    <small>Ages 13 or above</small>
+                                </div>
+                                <div class="counter">
+                                    <button id="dec-adults" disabled>-</button>
+                                    <span id="count-adults">0</span>
+                                    <button id="inc-adults">+</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="label-container">
+                                    <label>Children</label>
+                                    <small>Ages 2–12</small>
+                                </div>
+                                <div class="counter">
+                                    <button id="dec-children" disabled>-</button>
+                                    <span id="count-children">0</span>
+                                    <button id="inc-children">+</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="label-container">
+                                    <label>Infants</label>
+                                    <small>Under 2</small>
+                                </div>
+                                <div class="counter">
+                                    <button id="dec-infants" disabled>-</button>
+                                    <span id="count-infants">0</span>
+                                    <button id="inc-infants">+</button>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="label-container">
+                                    <label>Pets</label>
+                                    <small class="service-animal">Bringing a service animal?</small>
+                                </div>
+                                <div class="counter">
+                                    <button id="dec-pets" disabled>-</button>
+                                    <span id="count-pets">0</span>
+                                    <button id="inc-pets">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="profileMenu">
                     <nav>
@@ -82,16 +306,27 @@
                     </nav>
                 </div>
             </div>
+            
+            
         </header>
     </div>
-    <main>
+    
+    <main id = 'main'>
         <section class="listing-section">
             <div class="heading-container">
                 <h1>Comfy New Apt. in Pueblo Libre!</h1>
+
                 <div class="actions">
-                    <button class="action-btn">Share</button>
-                    <button class="action-btn">Save</button>
+                    <div class="action-btn" onclick="openModal()">
+                        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;"><path d="m27 18v9c0 1.1046-.8954 2-2 2h-18c-1.10457 0-2-.8954-2-2v-9m11-15v21m-10-11 9.2929-9.29289c.3905-.39053 1.0237-.39053 1.4142 0l9.2929 9.29289" fill="none"></path></svg>
+                        Share
+                    </div>
+                    <div class="action-btn" onclick="saveItem()">
+                        <svg id="saveIcon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" aria-hidden="true" role="presentation" focusable="false" style="display: block; fill: none; height: 16px; width: 16px; stroke: currentcolor; stroke-width: 2; overflow: visible;"><path d="M16 28c7-4.73 14-10 14-17a6.98 6.98 0 0 0-7-7c-1.8 0-3.58.68-4.95 2.05L16 8.1l-2.05-2.05a6.98 6.98 0 0 0-9.9 0A6.98 6.98 0 0 0 2 11c0 7 7 12.27 14 17z"></path></svg>
+                        Save
+                    </div>
                 </div>
+                
             </div>
             <div class="gallery">
                 <div class="main-image">
@@ -104,7 +339,7 @@
                     <img src="img4.jpg" alt="Image 5">
                     <img src="img2.jpg" alt="Image 6">
                 </div>
-                <button class="show-all-photos">Show all photos</button>
+                <button class="show-all-photos" onclick="openGallery()">Show all photos</button>
             </div>
         </section>
         <section class="infoSection">
@@ -510,11 +745,50 @@
                 </div>
             </div>
         </section>
-    </main>
 
-    <footer>
-        <p>Privacy · Terms · Sitemap</p>
-    </footer>
+
+    </main>
+<!-- photoGallery -->
+
+<div id="gallery-container">
+    <div id="gallery">
+        <div class="close-btn" onclick="closeGallery()">X Close</div>
+        <div class="photo-counter" id="photo-counter">2/21</div>
+        <div id="image-wrapper">
+            <img id="gallery-img" src="img1.jpg" alt="Photo">
+        </div>
+        <div class="arrow left-arrow" onclick="prevPhoto()">&#10094;</div>
+        <div class="arrow right-arrow" onclick="nextPhoto()">&#10095;</div>
+    </div>
+</div>
+
+<!-- photoGalleryEnd -->
+
+    <div class="modal-overlay" id="modal">
+        <div class="modal">
+            <button class="close-button" onclick="closeModal()">&times;</button>
+            <img src="img1.png" alt="Rental unit in Lima">
+            <h2>Share this place</h2>
+            <p>Rental unit in Lima · ★New · 1 bedroom · 1 bed · 1 bathroom</p>
+            <div class="button-container">
+                <button onclick="copyLink()">Copy Link</button>
+                <button>Email</button>
+                <button>Messages</button>
+                <button>WhatsApp</button>
+                <button>Messenger</button>
+                <button>Facebook</button>
+                <button>Twitter</button>
+                <button>Embed</button>
+            </div>
+        </div>
+    </div>
 </body>
+
+<footer>
+    <p>Privacy · Terms · Sitemap</p>
+</footer>
+
+<!-- Modal -->
+
 
 </html>
